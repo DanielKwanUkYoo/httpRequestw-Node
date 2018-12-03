@@ -7,19 +7,20 @@ function getAndPrintHTML (options) {
       path: options.path
   };
 
-    https.get(url, function(response) {
+  https.get(url, function(response) {
 
-      response.setEncoding('utf-8');
+    response.setEncoding('utf-8');
 
-      var body = '';
+    var body = '';
 
-      response.on('data', function(chunk) {
-        body += chunk;
-      response.on('end', function() {
-        console.log(body);
-
-      });
+    response.on('data', function(chunk) {
+      body += chunk;
     });
+
+    response.on('end', function() {
+      console.log(body);
+    });
+
   });
 };
 
