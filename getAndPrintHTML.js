@@ -13,7 +13,10 @@ function getAndPrintHTML () {
     var body = '';
     response.on('data', function(chunk) {
       body += chunk;
+
+    response.on('end', function() {
       console.log(body);
+    })
 
     });
   })
