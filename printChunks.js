@@ -14,16 +14,12 @@ function getAndPrintHTMLChunks () {
       return;
     }
 
-    var body = '';
+
     response.setEncoding('utf-8');
 
     response.on('data', function(chunk) {
-      body += chunk;
+      console.log(chunk, '\n');
 
-    });
-    response.on('end', function() {
-
-      console.log(body);
     });
 
   });
